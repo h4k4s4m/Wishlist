@@ -1,4 +1,1 @@
-export {
-    default
-}
-from "./Feed";
+export { default } from "./Feed";

@@ -1,5 +1,6 @@
-import React from 'react'
-import Progress from "./progress"
+import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
+import Progress from "./Progress";
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 const giftCard = (props) => (
@@ -32,4 +33,4 @@ const giftCard = (props) => (
     </Card>
 )
 
-export default giftCard
+export default giftCard;
