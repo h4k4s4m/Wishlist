@@ -13,8 +13,10 @@ export default path => {
 
   app.use(express.static(`${path}/client`));
 
-  app.use("/api/organization", routers.organization);
-  app.use("/api/person", routers.person);
+  app.use('/api/account', routers.account);
+  app.use('/api/donations', routers.donations);
+  app.use('/api/friends', routers.friends);
+  app.use('/api/posts', routers.posts);
 
   // Any non API GET routes will be directed to our React App and handled by React Router
   app.get("*", (req, res) => {
