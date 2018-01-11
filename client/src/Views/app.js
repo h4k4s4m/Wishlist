@@ -21,15 +21,19 @@ const props = {
     what: "birthday"
   }
 };
+const ProductWrapper = () =>(
+       <Card {...props} />
+);
 
 export default props => <Router>
   <div className="app">
-    <Navbar />
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/profile" component={Profile} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={Signup} />
-    </Switch>
+  <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/Card" component={ProductWrapper} />
+      </Switch>
   </div>
 </Router>
