@@ -1,4 +1,1 @@
-import Home from './home-view';
-export {
-  Home as default
-};
+export { default } from "./Home.js";
