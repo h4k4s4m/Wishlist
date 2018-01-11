@@ -13,7 +13,7 @@ export default class Navbar extends Component {
         return (
             <Menu stackable>
                 <Menu.Item>
-                    <Link to="/">Logo</Link>
+                    <Link to="/"><i class="huge shop icon"></i></Link>
                 </Menu.Item>
 
                 <Menu.Item
@@ -30,7 +30,7 @@ export default class Navbar extends Component {
                     </Menu.Item>
 
                     <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
-                        <Button primary><Link to="/signup">Sign-up</Link></Button>
+                        <Button><Link to="/signup">Signup</Link></Button>
                     </Menu.Item>
 
                     <Menu.Item name='help' active={activeItem === 'help'} onClick={this.handleItemClick}>
