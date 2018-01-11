@@ -1,8 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import Home from './Home';
+import Login from './Login';
+import Signup from './Signup';
+import Profile from './Profile';
+import Navbar from '../Components/Navbar';
 import Feed from "../Components/Feed";
-import Card from "../Components/Card";
+import Card from "../Components/ProductCard";
 import Comments from "../Components/Comments";
 
 //Example object - REMOVE ME FOR PRODUCTION
@@ -20,25 +24,19 @@ const props = {
     what: "birthday"
   }
 };
+const ProductWrapper = () =>(
+       <Card {...props} />
+);
 
 export default props => <Router>
   <div className="app">
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/feed">Feed</Link>
-      </li>
-      <li>
-        <Link to="/comments">Comments</Link>
-      </li>
-    </ul>
-
-    <hr/>
-
-    <Route exact path="/" component={Home}/>
-    <Route exact path="/feed" component={Feed}/>
-    <Route path="/comments" component={Comments}/>
+  <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/Card" component={ProductWrapper} />
+      </Switch>
   </div>
 </Router>
