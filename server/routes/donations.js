@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/:postID', donations.findDonationsForAPost);
 router.get('/:accountID', donations.findDonationsFromAUser);
-router.post('/', donations.create);
+router.post('/', donations.createNewDonation);
 router.put('/:postID', donations.update);
 
 export default router;

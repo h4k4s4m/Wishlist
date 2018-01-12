@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING(50),
         allowNull: false,
       },
-      fistName: {
+      firstName: {
         type: DataTypes.STRING(50),
         allowNull: false,
       },

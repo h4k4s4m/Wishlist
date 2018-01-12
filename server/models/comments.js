@@ -1,18 +1,18 @@
 module.exports = function (sequelize, DataTypes) {
     const Comments = sequelize.define('comments', {
-        postID = {
+        postID : {
             type: DataTypes.INTEGER(10),
             allowNull: false
         },
-        text = {
+        text : {
             type: DataTypes.STRING(150),
             allowNull: false
         },
-        accountID = {
+        accountID : {
             type: DataTypes.INTEGER(10),
             allowNull: false
         },
-        inactive = {
+        inactive : {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         }
