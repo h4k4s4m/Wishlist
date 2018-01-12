@@ -22,7 +22,7 @@ const Signup = () => (
       >
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='teal' textAlign='center'>
-            {' '}Welcome to Join us
+            {' '}Join Us!
           </Header>
           <Form size='large'>
             <Segment stacked>
