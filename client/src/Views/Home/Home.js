@@ -5,10 +5,10 @@ import { Container } from 'semantic-ui-react'
 
 
 const Home = () => (
-   <Container>
+    <Container>
         <Feed />
         <Comments />
-   </Container>
+    </Container>
 )
 
 export default Home;

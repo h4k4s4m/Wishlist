@@ -1,8 +1,14 @@
-import organization from './organization';
-import person from './person';
+import account from './account';
+import comments from './comments';
+import donations from './donations';
+import friends from './friends';
+import posts from './posts';
 const routers = {
-  organization,
-  person
+  account,
+  comments,
+  donations,
+  friends,
+  posts
 };
 export {
   routers as default,
