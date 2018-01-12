@@ -5,8 +5,10 @@ import App from './server';
 // Requiring our models for syncing
 import db from './server/models';
 
+import posts from './server/controllers/postsController';
+console.log(posts);
 const app = App(__dirname);
-
+console.log('this works');
 //use sync({force:true}) to drop all tables before trying to create
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {

@@ -21,7 +21,7 @@ const controller = {
         .then(dbModel => re.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    findAllbyPrice: (req, res) =>{
+    findAllByPrice: (req, res) =>{
         db.Posts.findAll({
             where: {
                 price: req.params.price,
@@ -64,4 +64,6 @@ const controller = {
         .catch(err => res.status(422).json(err));
     }
 
-}
+};
+
+export { controller as default };
