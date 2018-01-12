@@ -6,6 +6,7 @@ import Signup from './Signup';
 import Profile from './Profile';
 import Navbar from '../Components/Navbar';
 import Card from '../Components/ProductCard';
+import FeedEvent from "../Components/FeedEvent"
 
 //Example object - REMOVE ME FOR PRODUCTION
 const props = {
@@ -22,8 +23,19 @@ const props = {
     what: "birthday"
   }
 };
+
+const somethingHappened = {
+  who: "Sahm",
+  what: "Added new gift",
+  body: "something goes here"
+};
+
+
 const ProductWrapper = () => (
   <Card {...props} />
+);
+const FeedWrapper = () => (
+  <FeedEvent {...somethingHappened} />
 );
 
 export default props => <Router>
@@ -34,7 +46,8 @@ export default props => <Router>
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/Card" component={ProductWrapper} />
+      <Route exact path="/card" component={ProductWrapper} />
+      <Route exact path="/feed" component={FeedWrapper} />
     </Switch>
   </div>
 </Router>
