@@ -38,9 +38,9 @@ const controller = {
     },
     createNewDonation: (req, res) => {
         db.Donations.create({
-            accountID = req.body.accountID,
-            amount = req.body.amount,
-            postID = req.body.postID
+            accountID : req.body.accountID,
+            amount : req.body.amount,
+            postID : req.body.postID
         })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
@@ -50,7 +50,7 @@ const controller = {
             where: {
                 postID: req.params.postID
             },
-            amount = req.body.amount
+            amount: req.body.amount
         })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));

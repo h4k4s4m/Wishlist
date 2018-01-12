@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Menu, Button } from 'semantic-ui-react';
+import { Menu, Button, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 export default class Navbar extends Component {
+
     state = {}
 
     handleItemClick = (e, { name }) => this.setState({ activeItem: name })
@@ -11,30 +12,24 @@ export default class Navbar extends Component {
         const { activeItem } = this.state
 
         return (
-            <Menu stackable>
+            <Menu>
                 <Menu.Item>
-                    <Link to="/">Logo</Link>
+                    <img alt="" src='/assets/images/wlLogo.png' />
                 </Menu.Item>
-
-                <Menu.Item
-                    name='features'
-                    active={activeItem === 'features'}
-                    onClick={this.handleItemClick}
-                >
-                    <Link to="/">Home</Link>
+                <Menu.Item>
+                    <Header as='h1' color='blue'>
+                        <Link to="/">WishList</Link>
+                    </Header>
                 </Menu.Item>
-
                 <Menu.Menu position='right'>
-                    <Menu.Item name='profile' active={activeItem === 'profile'} onClick={this.handleItemClick}>
-                        <Link to="/profile">Profile</Link>
-                    </Menu.Item>
-
                     <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
-                        <Button primary><Link to="/signup">Sign-up</Link></Button>
+                        <Button><Link to="/signup">Signup</Link></Button>
                     </Menu.Item>
-
-                    <Menu.Item name='help' active={activeItem === 'help'} onClick={this.handleItemClick}>
+                    <Menu.Item name='login' active={activeItem === 'login'} onClick={this.handleItemClick}>
                         <Button><Link to="/login">Login</Link></Button>
+                    </Menu.Item>
+                    <Menu.Item name='profile' active={activeItem === 'profile'} onClick={this.handleItemClick}>
+                        <Button><Link to="/profile">Profile</Link></Button>
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>
