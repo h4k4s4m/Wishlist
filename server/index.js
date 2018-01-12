@@ -16,7 +16,9 @@ export default path => {
   app.use('/api/account', routers.account);
   app.use('/api/donations', routers.donations);
   app.use('/api/friends', routers.friends);
+  console.log("in index");
   app.use('/api/posts', routers.posts);
+  app.use('/api/comments', routers.comments);
 
   // Any non API GET routes will be directed to our React App and handled by React Router
   app.get("*", (req, res) => {
