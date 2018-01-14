@@ -21,7 +21,7 @@ const Login = () => (
       verticalAlign='middle'
     >
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='teal' textAlign='center'>
+        <Header as='h2' color='blue' textAlign='center'>
           {' '}Login to Your Account
           </Header>
         <Form size='large'>
@@ -30,7 +30,7 @@ const Login = () => (
               fluid
               icon='user'
               iconPosition='left'
-              placeholder='E-mail address'
+              placeholder='Username'
             />
             <Form.Input
               fluid
@@ -40,7 +40,7 @@ const Login = () => (
               type='password'
             />
 
-            <Button color='teal' fluid size='large'>Login</Button>
+            <Button primary fluid size='large'>Login</Button>
           </Segment>
         </Form>
         <Message>

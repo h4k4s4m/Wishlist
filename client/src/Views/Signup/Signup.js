@@ -21,16 +21,28 @@ const Signup = () => (
         verticalAlign='middle'
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
+          <Header as='h2' color='blue' textAlign='center'>
             {' '}Join Us!
           </Header>
           <Form size='large'>
             <Segment stacked>
+            <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
+                placeholder='Username'
+              />
               <Form.Input
                 fluid
                 icon='user'
                 iconPosition='left'
-                placeholder='E-mail address'
+                placeholder='First Name'
+              />
+              <Form.Input
+                fluid
+                icon='user'
+                iconPosition='left'
+                placeholder='Last Name'
               />
               <Form.Input
                 fluid
@@ -39,16 +51,8 @@ const Signup = () => (
                 placeholder='Password'
                 type='password'
               />
-
-              <Form.Input
-                fluid
-                icon='lock'
-                iconPosition='left'
-                placeholder='Re-enter Password'
-                type='password'
-              />
   
-              <Button color='teal' fluid size='large'>Signup</Button>
+              <Button primary fluid size='large'>Signup</Button>
             </Segment>
           </Form>
           <Message>
