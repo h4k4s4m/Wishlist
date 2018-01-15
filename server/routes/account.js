@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/api/user', account.findAll);
 router.get('/api/user/:id', account.findById);
-router.post('/api/user', account.create);
+router.post('/', account.create);
 router.put('/:username', account.update);
 router.delete('/:id', account.remove);
 
