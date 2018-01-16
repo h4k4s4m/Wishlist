@@ -4,6 +4,7 @@ import { Feed, Icon, Grid, Segment, Button, Form } from 'semantic-ui-react';
 import FeedEvent from "../FeedEvent";
 
 const MyFeed = () => (
+
     <Grid columns='equal'>
         <Grid.Column>
             <Segment color='blue'> </Segment>
@@ -19,6 +20,7 @@ const MyFeed = () => (
             <Segment color='blue'></Segment>
         </Grid.Column>
     </Grid>
+
 )
 
 export default MyFeed;
