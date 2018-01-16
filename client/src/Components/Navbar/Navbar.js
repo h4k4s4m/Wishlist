@@ -22,14 +22,23 @@ export default class Navbar extends Component {
                     </Header>
                 </Menu.Item>
                 <Menu.Menu position='right'>
-                    <Menu.Item name='signup' active={activeItem === 'signup'} onClick={this.handleItemClick}>
-                        <Button><Link to="/signup">Signup</Link></Button>
+                    <Menu.Item name='signup' >
+                        <Link to="/signup">
+                            <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
+                            </Button>
+                        </Link>
                     </Menu.Item>
-                    <Menu.Item name='login' active={activeItem === 'login'} onClick={this.handleItemClick}>
-                        <Button><Link to="/login">Login</Link></Button>
+                    <Menu.Item name='login'>
+                        <Link to="/login">
+                            <Button active={activeItem === 'login'} onClick={this.handleItemClick}>Login
+                            </Button>
+                        </Link>
                     </Menu.Item>
-                    <Menu.Item name='profile' active={activeItem === 'profile'} onClick={this.handleItemClick}>
-                        <Button><Link to="/profile">Profile</Link></Button>
+                    <Menu.Item name='profile'>
+                        <Link to="/profile">
+                            <Button  active={activeItem === 'profile'} onClick={this.handleItemClick}>Profile
+                            </Button>
+                        </Link>
                     </Menu.Item>
                 </Menu.Menu>
             </Menu>
