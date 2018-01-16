@@ -1,10 +1,11 @@
 import React from 'react';
 import Feed from '../../Components/Feed';
-// import HomePageLayout from '../../Components/HomePageLayout';
+import Footer from '../../Components/Footer';
 
 const Home = () => (
     <div>
         <Feed />
+        <Footer />
     </div>
 )
 
