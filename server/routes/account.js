@@ -3,8 +3,8 @@ import account from "../controllers/accountController";
 
 const router = express.Router();
 
-router.get('/', account.findAll);
-router.get('/:id', account.findById);
+router.get('/api/user', account.findAll);
+router.get('/api/user/:id', account.findById);
 router.post('/', account.create);
 router.put('/:username', account.update);
 router.delete('/:id', account.remove);
