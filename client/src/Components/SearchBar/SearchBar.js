@@ -17,15 +17,19 @@ export default class SearchExampleStandard extends Component {
 
   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
 
+  setSearch = (keyword) =>{
+    console.log(this.state.value);
+    this.setState({source : apac.apac(this.state.value)})
+  }
+
   handleSearchChange = (e, { value }) => {
-      if(!this.state.isLoading){
-        this.setState({source: apac.apac(this.state.value)})
-      }
+
+    _.debounce(this.setSearch, 1000);
+
     this.setState({ isLoading: true, value })
 
     setTimeout(() => {
       if (this.state.value.length < 1) return this.resetComponent()
-
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = result => re.test(result.title)
 
@@ -33,7 +37,7 @@ export default class SearchExampleStandard extends Component {
         isLoading: false,
         results: _.filter(this.state.source, isMatch),
       })
-    }, 2000);
+    }, 5000);
   };
 
   render() {
@@ -51,12 +55,12 @@ export default class SearchExampleStandard extends Component {
             {...this.props}
           />
         </Grid.Column>
-        {/* <Grid.Column width={8}>
+        <Grid.Column width={8}>
           <Header>State</Header>
           <pre>{JSON.stringify(this.state, null, 2)}</pre>
           <Header>Options</Header>
           <pre>{JSON.stringify(this.state.source, null, 2)}</pre>
-        </Grid.Column> */}
+        </Grid.Column>
       </Grid>
     )
   }
