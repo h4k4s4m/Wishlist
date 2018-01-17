@@ -1,11 +1,13 @@
 import routers from "./routes";
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 import logger from "morgan";
 
 export default path => {
   // Create Instance of Express
   const app = express();
+  app.use(cors());
 
   // Run Morgan for Logging
   app.use(logger("dev"));
