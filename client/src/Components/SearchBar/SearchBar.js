@@ -1,7 +1,6 @@
 import _ from 'lodash';
-import faker from 'faker';
 import React, { Component } from 'react';
-import { Search, Grid, Header } from 'semantic-ui-react';
+import { Search, Grid } from 'semantic-ui-react';
 import apac from "./apac";
 
 
@@ -18,6 +17,7 @@ export default class SearchExampleStandard extends Component {
   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
 
   setSearch = (keyword) =>{
+<<<<<<< Q
     console.log(this.state.value);
     this.setState({source : apac.apac(this.state.value)})
   }
@@ -27,7 +27,16 @@ export default class SearchExampleStandard extends Component {
     _.debounce(this.setSearch, 1000);
 
     this.setState({ isLoading: true, value })
+=======
+    this.setState({source : apac.apac(this.state.value)})
+  }
 
+  debounced = _.debounce(this.setSearch, 1000);
+  handleSearchChange = (e, { value }) => {
+>>>>>>> search function fixed
+
+    this.setState({ isLoading: true, value })
+    this.debounced();
     setTimeout(() => {
       if (this.state.value.length < 1) return this.resetComponent()
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
@@ -52,7 +61,7 @@ export default class SearchExampleStandard extends Component {
             onSearchChange={this.handleSearchChange}
             results={results}
             value={value}
-            {...this.props}
+            //{...this.props}
           />
         </Grid.Column>
         <Grid.Column width={8}>

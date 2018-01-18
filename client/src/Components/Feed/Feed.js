@@ -1,6 +1,6 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Feed, Icon, Grid, Segment, Button, Form } from 'semantic-ui-react';
+import { Grid, Segment } from 'semantic-ui-react';
 import FeedEvent from "../FeedEvent";
 
 const MyFeed = () => (
