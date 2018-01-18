@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Button, Progress } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Button, Progress } from 'semantic-ui-react';
 
 export default class progressBar extends Component {
     state = { percent: 33 }

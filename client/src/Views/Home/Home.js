@@ -1,14 +1,11 @@
 import React from 'react';
 import Feed from '../../Components/Feed';
-import Comments from '../../Components/Comments';
-import { Container } from 'semantic-ui-react'
-
+// import HomePageLayout from '../../Components/HomePageLayout';
 
 const Home = () => (
-    <Container>
+    <div>
         <Feed />
-        <Comments />
-    </Container>
+    </div>
 )
 
 export default Home;
