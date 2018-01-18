@@ -1,7 +1,6 @@
 import _ from 'lodash';
-import faker from 'faker';
 import React, { Component } from 'react';
-import { Search, Grid, Header } from 'semantic-ui-react';
+import { Search, Grid } from 'semantic-ui-react';
 import apac from "./apac";
 
 
@@ -17,15 +16,17 @@ export default class SearchExampleStandard extends Component {
 
   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
 
-  handleSearchChange = (e, { value }) => {
-      if(!this.state.isLoading){
-        this.setState({source: apac.apac(this.state.value)})
-      }
-    this.setState({ isLoading: true, value })
+  setSearch = (keyword) =>{
+    this.setState({source : apac.apac(this.state.value)})
+  }
 
+  debounced = _.debounce(this.setSearch, 1000);
+  handleSearchChange = (e, { value }) => {
+
+    this.setState({ isLoading: true, value })
+    this.debounced();
     setTimeout(() => {
       if (this.state.value.length < 1) return this.resetComponent()
-
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = result => re.test(result.title)
 
@@ -33,7 +34,7 @@ export default class SearchExampleStandard extends Component {
         isLoading: false,
         results: _.filter(this.state.source, isMatch),
       })
-    }, 2000);
+    }, 5000);
   };
 
   render() {
@@ -48,7 +49,7 @@ export default class SearchExampleStandard extends Component {
             onSearchChange={this.handleSearchChange}
             results={results}
             value={value}
-            {...this.props}
+            //{...this.props}
           />
         </Grid.Column>
         {/* <Grid.Column width={8}>
