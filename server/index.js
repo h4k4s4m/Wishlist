@@ -1,6 +1,7 @@
 import routers from "./routes";
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 import logger from "morgan";
 import myPath from 'path';
 import isAuthenticated from '../config/middleware/isAuthenticated';
@@ -10,6 +11,7 @@ import session from 'express-session';
 export default path => {
   // Create Instance of Express
   const app = express();
+  app.use(cors());
 
   // Run Morgan for Logging
   app.use(logger("dev"));
