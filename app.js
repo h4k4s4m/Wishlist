@@ -12,18 +12,9 @@ console.log(posts);
 const app = App(__dirname);
 
 //use sync({force:true}) to drop all tables before trying to create
-<<<<<<< HEAD
-<<<<<<< Q
-db.sequelize.sync().then(function() { // set {force: true} inside sync() to destroy the db everytime the server runs 
-=======
+db.sequelize.sync().then(function () { // set {force: true} inside sync() to destroy the db everytime the server runs 
 
-db.sequelize.sync().then(function() {
->>>>>>> master
-  app.listen(PORT, function() {
-=======
-db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
->>>>>>> search function fixed
     console.log('App listening on PORT: ' + PORT);
   });
 });

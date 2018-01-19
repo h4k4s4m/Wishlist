@@ -1,20 +1,8 @@
-<<<<<<< Q
-<<<<<<< Q
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
 import userApi from '../../Data/user-api';
 import { withRouter } from 'react-router-dom';
 
-<<<<<<< HEAD
-=======
-import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
-import userApi from '../../Data/user-api';
-import { withRouter } from 'react-router-dom';
->>>>>>> Fixed conflicts
-
-=======
->>>>>>> master
 class Login extends Component {
   state = {
     loading: true,
@@ -79,7 +67,7 @@ class Login extends Component {
               <Header as='h2' color='blue' textAlign='center'>
                 {' '}Login to Your Account
          </Header>
-              <Form size='large'>
+              <Form size='massive'>
                 <Segment stacked>
                   <Form.Input
                     onChange={this.handleInputChange}
