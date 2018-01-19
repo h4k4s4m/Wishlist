@@ -1,8 +1,20 @@
+<<<<<<< Q
+<<<<<<< Q
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
 import userApi from '../../Data/user-api';
 import { withRouter } from 'react-router-dom';
 
+<<<<<<< HEAD
+=======
+import React, { Component } from 'react';
+import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
+import userApi from '../../Data/user-api';
+import { withRouter } from 'react-router-dom';
+>>>>>>> Fixed conflicts
+
+=======
+>>>>>>> master
 class Login extends Component {
   state = {
     loading: true,
