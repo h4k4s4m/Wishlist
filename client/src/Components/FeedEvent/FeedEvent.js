@@ -1,6 +1,6 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Feed, Icon, Button, Form } from 'semantic-ui-react';
+import { Feed, Icon, Button } from 'semantic-ui-react';
 
 const FeedEvent = (props) => (
     <Feed>
@@ -22,7 +22,6 @@ const FeedEvent = (props) => (
                 </Feed.Meta>
             </Feed.Content>
         </Feed.Event>
-        <Form.TextArea />
         <Button content='Add Comment' labelPosition='left' icon='edit' primary />
     </Feed>
 )
