@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Home';
 import Login from './Login';
+import Home from './Home';
 import Signup from './Signup';
 import Profile from './Profile';
-import Navbar from '../Components/Navbar';
+import Layout from './Layout';
 import Card from '../Components/ProductCard';
-import FeedEvent from "../Components/FeedEvent"
+import FeedEvent from "../Components/FeedEvent";
+import SearchBar from "../Components/SearchBar";
 
 //Example object - REMOVE ME FOR PRODUCTION
 const props = {
@@ -40,7 +41,7 @@ const FeedWrapper = () => (
 
 export default props => <Router>
   <div className="app">
-    <Navbar />
+
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/profile" component={Profile} />
@@ -48,6 +49,8 @@ export default props => <Router>
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/card" component={ProductWrapper} />
       <Route exact path="/feed" component={FeedWrapper} />
+      <Route exact path="/search" component={SearchBar} />
     </Switch>
+    <Layout />
   </div>
 </Router>
