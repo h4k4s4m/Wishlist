@@ -11,7 +11,13 @@ var PORT = process.env.PORT || 3001; // Sets an initial port. We'll use this lat
 console.log(posts);
 const app = App(__dirname);
 
+<<<<<<< HEAD
 db.sequelize.sync().then(function () {
+=======
+//use sync({force:true}) to drop all tables before trying to create
+db.sequelize.sync().then(function () { // set {force: true} inside sync() to destroy the db everytime the server runs 
+
+>>>>>>> master
   app.listen(PORT, function () {
     console.log('App listening on PORT: ' + PORT);
   });

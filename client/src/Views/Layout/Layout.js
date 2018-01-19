@@ -39,7 +39,6 @@ export default class Layout extends Component {
                                     <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
                             </Button>
                                 </Link>
-
                                 <Link to="/profile">
                                     <Button active={activeItem === 'profile'} onClick={this.handleItemClick}>Profile
                             </Button>
