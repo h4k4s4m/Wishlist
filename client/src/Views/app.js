@@ -6,7 +6,8 @@ import Signup from './Signup';
 import Profile from './Profile';
 import Layout from './Layout';
 import Card from '../Components/ProductCard';
-import FeedEvent from '../Components/FeedEvent';
+import FeedEvent from "../Components/FeedEvent";
+import SearchBar from "../Components/SearchBar";
 
 //Example object - REMOVE ME FOR PRODUCTION
 const props = {
@@ -48,6 +49,7 @@ export default props => <Router>
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/card" component={ProductWrapper} />
       <Route exact path="/feed" component={FeedWrapper} />
+      <Route exact path="/search" component={SearchBar} />
     </Switch>
     <Layout />
   </div>
