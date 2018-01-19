@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
 import userApi from '../../Data/user-api';
 import { withRouter } from 'react-router-dom';
 
@@ -46,80 +46,80 @@ class Signup extends Component {
   render() {
     return (
       <div className='Signup-form'>
-        {/*
+        <Container text style={{ marginTop: '7em' }}>
+          {/*
         Heads up! The styles below are necessary for the correct render of this example.
         You can do same with CSS, the main idea is that all the elements up to the `Grid`
         below must have a height of 100%.
       */}
-        <style>{`
+          <style>{`
         body > div,
         body > div > div,
         body > div > div > div.Signup-form {
-          height: 100%;
         }
       `}</style>
-        <Grid
-          textAlign='center'
-          style={{ height: '100%' }}
-          verticalAlign='middle'
-        >
-          <Grid.Column style={{ maxWidth: 450 }}>
-            <Header as='h2' color='blue' textAlign='center'>
-              {' '}Join Us!
+          <Grid
+            textAlign='center'
+            verticalAlign='middle'
+          >
+            <Grid.Column style={{ maxWidth: 450 }}>
+              <Header as='h2' color='blue' textAlign='center'>
+                {' '}Join Us!
           </Header>
-            <Form size='large'>
-              <Segment stacked>
-                <Form.Input
-                  onChange={this.handleInputChange}
-                  value={this.state.user.username}
-                  name='username'
-                  fluid
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Username'
-                />
-                <Form.Input
-                  onChange={this.handleInputChange}
-                  value={this.state.user.firstName}
-                  name='firstName'
-                  fluid
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='First Name'
-                />
-                <Form.Input
-                  onChange={this.handleInputChange}
-                  value={this.state.user.lastName}
-                  name='lastName'
-                  fluid
-                  icon='user'
-                  iconPosition='left'
-                  placeholder='Last Name'
-                />
-                <Form.Input
-                  onChange={this.handleInputChange}
-                  value={this.state.user.password}
-                  name='password'
-                  fluid
-                  icon='lock'
-                  iconPosition='left'
-                  placeholder='Password'
-                  type='password'
-                />
-                {!this.state.user.id &&
-                  <div>
-                    <Button onClick={this.addUser} primary fluid size='large'>
-                      Signup
+              <Form size='large'>
+                <Segment stacked color='blue'>
+                  <Form.Input
+                    onChange={this.handleInputChange}
+                    value={this.state.user.username}
+                    name='username'
+                    fluid
+                    icon='user'
+                    iconPosition='left'
+                    placeholder='Username'
+                  />
+                  <Form.Input
+                    onChange={this.handleInputChange}
+                    value={this.state.user.firstName}
+                    name='firstName'
+                    fluid
+                    icon='user'
+                    iconPosition='left'
+                    placeholder='First Name'
+                  />
+                  <Form.Input
+                    onChange={this.handleInputChange}
+                    value={this.state.user.lastName}
+                    name='lastName'
+                    fluid
+                    icon='user'
+                    iconPosition='left'
+                    placeholder='Last Name'
+                  />
+                  <Form.Input
+                    onChange={this.handleInputChange}
+                    value={this.state.user.password}
+                    name='password'
+                    fluid
+                    icon='lock'
+                    iconPosition='left'
+                    placeholder='Password'
+                    type='password'
+                  />
+                  {!this.state.user.id &&
+                    <div>
+                      <Button onClick={this.addUser} primary fluid size='large'>
+                        Signup
                     </Button>
-                  </div>
-                }
-              </Segment>
-            </Form>
-            <Message>
-              Already a member? <a href='/login'>Login</a>
-            </Message>
-          </Grid.Column>
-        </Grid>
+                    </div>
+                  }
+                </Segment>
+              </Form>
+              <Message>
+                Already a member? <a href='/login'>Login</a>
+              </Message>
+            </Grid.Column>
+          </Grid>
+        </Container>
       </div>
     )
   }
