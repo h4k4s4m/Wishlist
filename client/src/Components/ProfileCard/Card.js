@@ -5,8 +5,8 @@ const MyCard = props => (
   <Card>
     <Image src='/assets/images/tom.jpg' />
     <Card.Content>
-      <Card.Header>{props.fullName}</Card.Header>
-      <Card.Meta>Joined in 2016</Card.Meta>
+      <Card.Header>{props.account.fullName}</Card.Header>
+      <Card.Meta>Joined in {props.account.joinDate}</Card.Meta>
     </Card.Content>
   </Card>
 )
