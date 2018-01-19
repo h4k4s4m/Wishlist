@@ -1,17 +1,28 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-<<<<<<< HEAD
-<<<<<<< Q
-import { Grid, Segment } from 'semantic-ui-react';
-=======
 import { Grid, Segment, Container } from 'semantic-ui-react';
->>>>>>> Major front end overhaul
-=======
-import { Grid, Segment, Container } from 'semantic-ui-react';
->>>>>>> master
 import FeedEvent from "../FeedEvent";
+import Axios from 'axios';
 
-const MyFeed = () => (
+const postsArr = [];
+const getEveryPostOfAllTime = () => {
+    Axios.get('/')
+    .then(function (response){
+        arr = response;
+        console.log(response);
+    })
+}
+
+const friendsArr = [];
+const getAllFriends = accountID => {
+    Axios.get("/" + accountID)
+    .then(function(response){
+        friendsArr = response;
+        console.log(response);
+    })
+}
+
+const MyFeed = (props) => (
     <Container>
         <Grid columns={2} divided>
             <Grid.Row stretched>
