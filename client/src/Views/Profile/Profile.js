@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import MyCard from '../../Components/ProfileCard';
-import { Grid, Segment, Container } from 'semantic-ui-react'
+import { Container, Grid, Segment, Button } from 'semantic-ui-react'
 
-const Profile = () => (
-    <Container text style={{ marginTop: '7em' }}>
+class Profile extends Component {
+    state = {
+        loading: true,
+        account: {}
+    };
+   
+  componentDidMount = () =>{
+    this.setState({
+        account:{
+            username: sessionStorage.getItem('userName'),
+            fullName: sessionStorage.getItem('fullName')
+        }
+    })
+  }
+      render() {
+          return (
+            <Container text style={{ marginTop: '7em' }}>
         <Grid columns={2} divided>
             <Grid.Row stretched>
                 <Grid.Column mobile={16} tablet={8} computer={6}>
@@ -15,7 +30,7 @@ const Profile = () => (
                     <Segment textAlign='center' color='blue'>
                         <h1>Profile</h1>
                         <hr />
-                        <h5>Name: Tom Fish</h5>
+                        <h5>Name: { this.state.account.fullName }</h5>
                         <h5>Email: tom@gmail.com</h5>
                         <h5>Password: **********</h5>
                         <h5>DOB: 1990-03-31</h5>
@@ -25,6 +40,8 @@ const Profile = () => (
             </Grid.Row>
         </Grid>
     </Container>
-)
+          )
+      }
+}// end of class
 
 export default Profile;
