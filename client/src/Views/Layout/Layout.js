@@ -52,7 +52,7 @@ export default class Layout extends Component {
                 <Segment
                     inverted
                     vertical
-                    style={{ margin: '5em 0em 0em', padding: '5em 0em' }}
+                    style={{ marginTop: '18em' }}
                     color='blue'
                 >
                     <Container>
@@ -69,7 +69,7 @@ export default class Layout extends Component {
                                         <Image
                                             size='mini'
                                             src='/assets/images/wlLogo.png'
-                                            style={{ marginRight: '1.5em' }} />
+                                        />
                                     </List>
                                 </Grid.Column>
                                 <Grid.Column width={8}>
