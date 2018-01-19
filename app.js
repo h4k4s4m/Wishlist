@@ -12,7 +12,7 @@ console.log(posts);
 const app = App(__dirname);
 
 //use sync({force:true}) to drop all tables before trying to create
-db.sequelize.sync().then(function() {  
+db.sequelize.sync({force:true}).then(function() {  
 
   app.listen(PORT, function () {
 

@@ -19,7 +19,9 @@ router.post("/api/login", passport.authenticate("local"), (req, res) => {
         username: req.user.username,
         firstName: req.user.firstName,
         lastName: req.user.lastName,
-        id: req.user.id
+        id: req.user.id,
+        email: req.user.email,
+        dob: req.user.dob
     });
 }
 });
