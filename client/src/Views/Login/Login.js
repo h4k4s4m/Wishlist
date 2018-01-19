@@ -1,10 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
-
-const Login = () => (
-  <div className='login-form'>
-    <Container text style={{ marginTop: '7em' }}>
-      {/*
+import userApi from '../../Data/user-api';
+import { withRouter } from 'react-router-dom';
 
 class Login extends Component {
   state = {
@@ -50,6 +47,7 @@ class Login extends Component {
   render() {
     return (
       <div className='login-form'>
+      <Container text style={{ marginTop: '7em' }}>
     {/*
         Heads up! The styles below are necessary for the correct render of this example.
         You can do same with CSS, the main idea is that all the elements up to the `Grid`
@@ -66,65 +64,42 @@ class Login extends Component {
         verticalAlign='middle'
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='blue' textAlign='center'>
-            {' '}Login to Your Account
-          <Form size='large'>
-            <Segment stacked color='blue'>
-              <Form.Input
-                fluid
-                icon='user'
-                iconPosition='left'
-                placeholder='Username'
-              />
-              <Form.Input
-                fluid
-                icon='lock'
-                iconPosition='left'
-                placeholder='Password'
-                type='password'
-              />
+       <Header as='h2' color='blue' textAlign='center'>
+         {' '}Login to Your Account
+         </Header>
+       <Form size='large'>
+         <Segment stacked>
+           <Form.Input
+             onChange={this.handleInputChange}
+             value={this.state.credential.username}
+             name='username'
+             fluid
+             icon='user'
+             iconPosition='left'
+             placeholder='Username'
+           />
+           <Form.Input
+             onChange={this.handleInputChange}
+             value={this.state.credential.password}
+             name='password'
+             fluid
+             icon='lock'
+             iconPosition='left'
+             placeholder='Password'
+             type='password'
+           />
 
-              <Button primary fluid size='large'>Login</Button>
-            </Segment>
-          </Form>
-          <Message>
-            New to us? <a href='/signup'>Signup</a>
-          </Message>
-        </Grid.Column>
-      </Grid>
-    </Container>
-        <Form size='large'>
-          <Segment stacked>
-            <Form.Input
-              onChange={this.handleInputChange}
-              value={this.state.credential.username}
-              name='username'
-              fluid
-              icon='user'
-              iconPosition='left'
-              placeholder='Username'
-            />
-            <Form.Input
-              onChange={this.handleInputChange}
-              value={this.state.credential.password}
-              name='password'
-              fluid
-              icon='lock'
-              iconPosition='left'
-              placeholder='Password'
-              type='password'
-            />
-
-            <Button onClick={this.loginUser} primary fluid size='large'>
-              Login
-            </Button>
-          </Segment>
-        </Form>
-        <Message>
-          New to us? <a href='/signup'>Sign Up</a>
-        </Message>
-      </Grid.Column>
+           <Button onClick={this.loginUser} primary fluid size='large'>
+             Login
+           </Button>
+         </Segment>
+       </Form>
+       <Message>
+         New to us? <a href='/signup'>Sign Up</a>
+       </Message>
+     </Grid.Column>
     </Grid>
+    </Container>
   </div>
     )
   }
