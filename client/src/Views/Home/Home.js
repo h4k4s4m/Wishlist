@@ -1,11 +1,11 @@
 import React from 'react';
 import Feed from '../../Components/Feed';
-// import HomePageLayout from '../../Components/HomePageLayout';
+import { Container } from 'semantic-ui-react';
 
 const Home = () => (
-    <div>
+    <Container text style={{ marginTop: '7em' }}>
         <Feed />
-    </div>
+    </Container>
 )
 
-export default Home;
+export default Home; 

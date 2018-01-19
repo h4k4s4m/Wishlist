@@ -1,6 +1,6 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Feed, Icon, Grid, Segment, Button, Form , Accordion} from 'semantic-ui-react';
+import { Feed, Icon, Button, Form } from 'semantic-ui-react';
 
 const FeedEvent = (props) => (
     <Feed>
@@ -11,8 +11,8 @@ const FeedEvent = (props) => (
             <Feed.Content>
                 <Feed.Summary>
                     <Feed.User>{props.who}</Feed.User>
-                     {" "+props.what}
-            <Feed.Date>{props.when}</Feed.Date>
+                    {" " + props.what}
+                    <Feed.Date>{props.when}</Feed.Date>
                 </Feed.Summary>
                 <Feed.Meta>
                     <Feed.Like>
