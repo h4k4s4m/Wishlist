@@ -1,9 +1,16 @@
 <<<<<<< Q
+<<<<<<< Q
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import userApi from '../../Data/user-api';
 import { withRouter } from 'react-router-dom';
 
+=======
+import React, { Component } from 'react';
+import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
+import userApi from '../../Data/user-api';
+import { withRouter } from 'react-router-dom';
+>>>>>>> Fixed conflicts
 
 class Login extends Component {
   state = {
@@ -49,6 +56,7 @@ class Login extends Component {
   render() {
     return (
       <div className='login-form'>
+      <Container text style={{ marginTop: '7em' }}>
     {/*
 =======
 import React from 'react';
@@ -74,6 +82,7 @@ const Login = () => (
         verticalAlign='middle'
       >
         <Grid.Column style={{ maxWidth: 450 }}>
+<<<<<<< Q
           <Header as='h2' color='blue' textAlign='center'>
             {' '}Login to Your Account
           </Header>
@@ -99,17 +108,44 @@ const Login = () => (
               placeholder='Password'
               type='password'
             />
+=======
+       <Header as='h2' color='blue' textAlign='center'>
+         {' '}Login to Your Account
+         </Header>
+       <Form size='large'>
+         <Segment stacked>
+           <Form.Input
+             onChange={this.handleInputChange}
+             value={this.state.credential.username}
+             name='username'
+             fluid
+             icon='user'
+             iconPosition='left'
+             placeholder='Username'
+           />
+           <Form.Input
+             onChange={this.handleInputChange}
+             value={this.state.credential.password}
+             name='password'
+             fluid
+             icon='lock'
+             iconPosition='left'
+             placeholder='Password'
+             type='password'
+           />
+>>>>>>> Fixed conflicts
 
-            <Button onClick={this.loginUser} primary fluid size='large'>
-              Login
-            </Button>
-          </Segment>
-        </Form>
-        <Message>
-          New to us? <a href='/signup'>Sign Up</a>
-        </Message>
-      </Grid.Column>
+           <Button onClick={this.loginUser} primary fluid size='large'>
+             Login
+           </Button>
+         </Segment>
+       </Form>
+       <Message>
+         New to us? <a href='/signup'>Sign Up</a>
+       </Message>
+     </Grid.Column>
     </Grid>
+<<<<<<< Q
 =======
           <Form size='large'>
             <Segment stacked color='blue'>
@@ -137,6 +173,9 @@ const Login = () => (
       </Grid>
     </Container>
 >>>>>>> Major front end overhaul
+=======
+    </Container>
+>>>>>>> Fixed conflicts
   </div>
     )
   }

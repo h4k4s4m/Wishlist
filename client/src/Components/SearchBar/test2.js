@@ -1,3 +1,3 @@
- apac = require("./apac");
+apac = require("./apac");
 
 console.log(apac.apac);
