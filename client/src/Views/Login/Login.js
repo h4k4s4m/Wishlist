@@ -1,10 +1,11 @@
 <<<<<<< Q
 <<<<<<< Q
 import React, { Component } from 'react';
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
 import userApi from '../../Data/user-api';
 import { withRouter } from 'react-router-dom';
 
+<<<<<<< HEAD
 =======
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Message, Segment, Container } from 'semantic-ui-react';
@@ -12,6 +13,8 @@ import userApi from '../../Data/user-api';
 import { withRouter } from 'react-router-dom';
 >>>>>>> Fixed conflicts
 
+=======
+>>>>>>> master
 class Login extends Component {
   state = {
     loading: true,
@@ -82,6 +85,7 @@ const Login = () => (
         verticalAlign='middle'
       >
         <Grid.Column style={{ maxWidth: 450 }}>
+<<<<<<< HEAD
 <<<<<<< Q
           <Header as='h2' color='blue' textAlign='center'>
             {' '}Login to Your Account
@@ -109,6 +113,8 @@ const Login = () => (
               type='password'
             />
 =======
+=======
+>>>>>>> master
        <Header as='h2' color='blue' textAlign='center'>
          {' '}Login to Your Account
          </Header>
@@ -133,7 +139,10 @@ const Login = () => (
              placeholder='Password'
              type='password'
            />
+<<<<<<< HEAD
 >>>>>>> Fixed conflicts
+=======
+>>>>>>> master
 
            <Button onClick={this.loginUser} primary fluid size='large'>
              Login
@@ -145,6 +154,7 @@ const Login = () => (
        </Message>
      </Grid.Column>
     </Grid>
+<<<<<<< HEAD
 <<<<<<< Q
 =======
           <Form size='large'>
@@ -176,6 +186,9 @@ const Login = () => (
 =======
     </Container>
 >>>>>>> Fixed conflicts
+=======
+    </Container>
+>>>>>>> master
   </div>
     )
   }

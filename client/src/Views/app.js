@@ -6,12 +6,17 @@ import Signup from './Signup';
 import Profile from './Profile';
 import Layout from './Layout';
 import Card from '../Components/ProductCard';
+<<<<<<< HEAD
 <<<<<<< Q
 import FeedEvent from "../Components/FeedEvent";
 import SearchBar from "../Components/SearchBar";
 =======
 import FeedEvent from '../Components/FeedEvent';
 >>>>>>> Major front end overhaul
+=======
+import FeedEvent from "../Components/FeedEvent";
+import SearchBar from "../Components/SearchBar";
+>>>>>>> master
 
 //Example object - REMOVE ME FOR PRODUCTION
 const props = {

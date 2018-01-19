@@ -17,6 +17,7 @@ export default class SearchExampleStandard extends Component {
   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
 
   setSearch = (keyword) =>{
+<<<<<<< HEAD
 <<<<<<< Q
     console.log(this.state.value);
     this.setState({source : apac.apac(this.state.value)})
@@ -28,12 +29,17 @@ export default class SearchExampleStandard extends Component {
 
     this.setState({ isLoading: true, value })
 =======
+=======
+>>>>>>> master
     this.setState({source : apac.apac(this.state.value)})
   }
 
   debounced = _.debounce(this.setSearch, 1000);
   handleSearchChange = (e, { value }) => {
+<<<<<<< HEAD
 >>>>>>> search function fixed
+=======
+>>>>>>> master
 
     this.setState({ isLoading: true, value })
     this.debounced();

@@ -1,10 +1,14 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
+<<<<<<< HEAD
 <<<<<<< Q
 import { Grid, Segment } from 'semantic-ui-react';
 =======
 import { Grid, Segment, Container } from 'semantic-ui-react';
 >>>>>>> Major front end overhaul
+=======
+import { Grid, Segment, Container } from 'semantic-ui-react';
+>>>>>>> master
 import FeedEvent from "../FeedEvent";
 
 const MyFeed = () => (
