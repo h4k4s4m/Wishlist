@@ -12,8 +12,13 @@ class Login extends Component {
   history=this.props.history;
   loginUser = () => {
     userApi.login(this.state.credential)
-      .then(loggedin => {
-        this.history.push('/profile');
+      .then(res => {
+     
+          sessionStorage.setItem('userId', res.data.id);
+          sessionStorage.setItem('userName', res.data.username);
+          sessionStorage.setItem('fullName', `${res.data.firstName} ${res.data.lastName}`);
+    
+          this.history.push('/profile');
       });
   };
 
