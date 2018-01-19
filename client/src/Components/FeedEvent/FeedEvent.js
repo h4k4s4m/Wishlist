@@ -11,8 +11,8 @@ const FeedEvent = (props) => (
             <Feed.Content>
                 <Feed.Summary>
                     <Feed.User>{props.who}</Feed.User>
-                     {" "+props.what}
-            <Feed.Date>{props.when}</Feed.Date>
+                    {" " + props.what}
+                    <Feed.Date>{props.when}</Feed.Date>
                 </Feed.Summary>
                 <Feed.Meta>
                     <Feed.Like>
