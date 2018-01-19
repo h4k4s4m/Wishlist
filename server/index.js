@@ -14,12 +14,12 @@ export default path => {
   app.use(cors());
 
   // Run Morgan for Logging
-  app.use(logger("dev"));
+  //app.use(logger("dev"));
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
   app.use(express.static(`${path}/client`));
-  app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+  app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true, cookie: { secure: true } }));
   app.use(passport.initialize());
   app.use(passport.session());
 
@@ -28,16 +28,23 @@ export default path => {
   app.use('/api/friends', routers.friends);
   app.use('/api/posts', routers.posts);
   app.use('/api/comments', routers.comments);
- 
+
   // Any non API GET routes will be directed to our React App and handled by React Router
   app.get("*", (req, res) => {
     res.sendFile(`${path}/client/index.html`);
   });
 
-
-  app.get("/profile", isAuthenticated, function(req, res) {
-    res.sendFile(`${path}/profile`);
+  // Route for logging user out
+  app.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/");
   });
+
+  app.get("/profile", isAuthenticated, function (req, res) {
+    res.sendFile(`${path}/`);
+  });
+
+
   return app;
   // -------------------------------------------------
 };

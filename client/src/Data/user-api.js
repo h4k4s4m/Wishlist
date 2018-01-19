@@ -1,8 +1,9 @@
 import axios from "axios";
 const userApi = {
-  login: credential => axios.post('/api/login', credential).then(data => {
-     console.log(`this is a test: ${data}`);
-     return data;
+  login: credential => axios.post('/api/login', credential),
+  getUser: () => axios.get('/api/user_data', data => {
+    console.log(typeof(data.username));
+    return data;
   }),
   getAll: () => axios.get('/api/user').then(results => results.data),
   getById: id => axios.get(`/api/user/${id}`).then(results => results.data),
