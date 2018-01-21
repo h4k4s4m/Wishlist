@@ -3,6 +3,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { Grid, Segment } from 'semantic-ui-react';
 import FeedEvent from "../FeedEvent";
 import SearchBar from "../SearchBar";
+import Comment from "../Comments"
 
 const MyFeed = () => (
     <Grid columns={2} divided>
@@ -19,6 +20,7 @@ const MyFeed = () => (
                     <FeedEvent who={"Sahm"} what={"added a gift"} when={"Like 15 minutes ago"} />
                     <FeedEvent who={"Ren"} what={"liked a gift"} when={"Like 20 minutes ago"} />
                     <FeedEvent who={"Q"} what={"stole a gift"} when={"Like 15 minutes ago"} />
+                    <Comment />
                 </Segment>
             </Grid.Column>
         </Grid.Row>
