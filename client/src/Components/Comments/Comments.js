@@ -6,7 +6,7 @@ const comments = () =>(
   <h3 class="ui dividing header">Comments</h3>
   <div class="comment">
     <a class="avatar">
-      <img src="/images/avatar/small/matt.jpg"/>
+      <img src="/assets/images/avatar1.jpeg"/>
     </a>
     <div class="content">
       <a class="author">Matt</a>
@@ -23,7 +23,7 @@ const comments = () =>(
   </div>
   <div class="comment">
     <a class="avatar">
-      <img src="/images/avatar/small/elliot.jpg"/>
+      <img src="/assets/images/avatar1.jpeg"/>
     </a>
     <div class="content">
       <a class="author">Elliot Fu</a>
@@ -40,7 +40,7 @@ const comments = () =>(
     <div class="comments">
       <div class="comment">
         <a class="avatar">
-          <img src="/images/avatar/small/jenny.jpg"/>
+          <img src="/assets/images/avatar1.jpeg"/>
         </a>
         <div class="content">
           <a class="author">Jenny Hess</a>
@@ -59,7 +59,7 @@ const comments = () =>(
   </div>
   <div class="comment">
     <a class="avatar">
-      <img src="/images/avatar/small/joe.jpg"/>
+      <img src="/assets/images/avatar1.jpeg"/>
     </a>
     <div class="content">
       <a class="author">Joe Henderson</a>

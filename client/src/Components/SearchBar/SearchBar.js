@@ -2,10 +2,14 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { Search, Header } from 'semantic-ui-react';
 import apac from "./apac";
+import Modal from "./Modal";
 
 export default class SearchExampleStandard extends Component {
   state = {
-    source: apac.apac("")
+    source: apac.apac(""),
+    item : "",
+    price : "",
+    image : ""
   }
 
   componentWillMount() {
@@ -13,8 +17,20 @@ export default class SearchExampleStandard extends Component {
   }
   resetComponent = () => this.setState({ isLoading: false, results: [], value: '' })
 
-  handleResultSelect = (e, { result }) => this.setState({ value: result.title })
+  handleResultSelect = (e, { result }) => {
+    console.log(result);
+    let selected = {
+      item : result.title,
+      price : result.price,
+      image : result.image
+    };
 
+    this.setState(selected);
+
+
+
+    this.setState({ value: result.title })
+  }
   setSearch = () => {
     this.setState({ source: apac.apac(this.state.value) })
   }
@@ -36,6 +52,7 @@ export default class SearchExampleStandard extends Component {
     }, 5000);
   };
 
+
   render() {
     const { isLoading, value, results } = this.state
 
@@ -53,6 +70,7 @@ export default class SearchExampleStandard extends Component {
           value={value}
           style={{ overflow: true }}
         />
+        <Modal {...this.state}/>
       </div>
     )
   }

@@ -48,6 +48,7 @@ const controller = {
                 accountName: req.body.accountName,
                 item: req.body.item,
                 price: req.body.price,
+                image: req.body.image,
                 postID: req.body.postID
             }
         })
