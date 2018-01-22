@@ -66,7 +66,7 @@ export default class Layout extends Component {
                             </Grid.Column>
                             <Grid.Column width={8} textAlign='center'>
                                 <Header inverted as='h4' content='Contributors' />
-                                <Divider inverted />
+                                <Divider inverted fitted />
                                 <List link inverted>
                                     <List.Item as='a'><a href='https://www.linkedin.com/in/hfakhreddine86/' target='_blank' rel="noopener noreferrer">
                                         <Icon name='linkedin square'>
