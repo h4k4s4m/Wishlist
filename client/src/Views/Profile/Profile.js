@@ -41,7 +41,7 @@ class Profile extends Component {
                             <Segment textAlign='center' color='blue'>
                                 <h1>Profile Details</h1>
                                 <hr />
-                                <h5>Username:{this.state.account.username}</h5>
+                                <h5>Username: {this.state.account.username}</h5>
                                 <h5>Email: {this.state.account.email}</h5>
                                 <h5>DOB: {this.state.account.dob}</h5>
                             </Segment>
