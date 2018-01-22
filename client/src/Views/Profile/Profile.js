@@ -18,8 +18,8 @@ class Profile extends Component {
     }
     render() {
         return (
-            <Container text style={{ marginTop: '7em' }}>
-                <Grid columns={3} divided>
+            <Container>
+                <Grid text style={{ marginTop: '10em' }}>
                     <Grid.Row stretched>
                         <Grid.Column mobile={16} tablet={8} computer={4}>
                             <Segment textAlign='center' color='blue'>

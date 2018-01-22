@@ -41,7 +41,6 @@ const FeedWrapper = () => (
 
 export default props => <Router>
   <div className="app">
-
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/profile" component={Profile} />
