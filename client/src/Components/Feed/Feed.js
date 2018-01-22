@@ -5,8 +5,6 @@ import FeedEvent from "../FeedEvent";
 import SearchBar from "../SearchBar";
 import commentApi from "../../Data/comment-api";
 
-
-
 export default class Feed extends React.Component{
     constructor(props){
         super(props)
@@ -29,16 +27,19 @@ render(){
         <Container>
         <Grid columns={2} divided>
             <Grid.Row>
-                <Grid.Column mobile={16} tablet={16} computer={10}>
-                    <Segment color='blue'>
-                    {this.printArray(this.state.result)}
-                    </Segment>
-                </Grid.Column>
-                <Grid.Column mobile={16} tablet={16} computer={6}>
+                <Grid.Column mobile={16} tablet={16} computer={16}>
                     <Segment color='blue'>
                         <SearchBar />
                     </Segment>
                 </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+                <Grid.Column mobile={16} tablet={16} computer={16}>
+                    <Segment color='blue'>
+                    {this.printArray(this.state.result)}
+                    </Segment>
+                </Grid.Column>
+
             </Grid.Row>
         </Grid>
     </Container>

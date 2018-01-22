@@ -13,13 +13,13 @@ class Login extends Component {
     userApi.login(this.state.credential)
       .then(res => {
           console.log(res.data);
-          let joinDate = res.data.createdAt;
+          sessionStorage.setItem('isLoggedin', res.data.loggedin);
           sessionStorage.setItem('userId', res.data.id);
           sessionStorage.setItem('userName', res.data.username);
           sessionStorage.setItem('fullName', `${res.data.firstName} ${res.data.lastName}`);
           sessionStorage.setItem('email', res.data.email);
           sessionStorage.setItem('dob', res.data.dob);
-          sessionStorage.setItem('joinDate', joinDate);
+          sessionStorage.setItem('joinDate', res.data.joinDate.slice(0,10));
           this.history.push('/profile');
       });
   };
