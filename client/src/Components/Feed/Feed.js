@@ -19,8 +19,6 @@ componentDidMount = ()=>{
     commentApi.getAll().then((result)=>{
         this.setState({result})
     })
-
-
 }
 
 
