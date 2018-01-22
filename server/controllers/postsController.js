@@ -43,6 +43,7 @@ const controller = {
     },
     newPost: (req, res) => {
         db.Posts.create({
+<<<<<<< HEAD
 <<<<<<< Q
             accountID: req.body.accountID,
             accountName: req.body.accountName,
@@ -54,6 +55,8 @@ const controller = {
             .catch(err => res.status(422).json(err));
     }, deletePost: (req, res) => {
 =======
+=======
+>>>>>>> master
                 accountId: req.body.accountId,
                 accountName: req.body.accountName,
                 item: req.body.item,

@@ -6,6 +6,7 @@ import SearchBar from "../SearchBar";
 import Comment from "../Comments"
 
 const MyFeed = () => (
+<<<<<<< HEAD
 <<<<<<< Q
     <Container>
         <Grid columns={2} divided>
@@ -26,6 +27,9 @@ const MyFeed = () => (
         </Grid>
     </Container>
 =======
+=======
+
+>>>>>>> master
     <Grid columns={2} divided>
         <Grid.Row>
             <Grid.Column mobile={16} tablet={16} computer={16}>
@@ -45,7 +49,11 @@ const MyFeed = () => (
             </Grid.Column>
         </Grid.Row>
     </Grid>
+<<<<<<< HEAD
 >>>>>>> early comment work
+=======
+
+>>>>>>> master
 )
 
 export default MyFeed;
