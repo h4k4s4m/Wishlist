@@ -8,7 +8,7 @@ const controller = {
                 accountID: req.params.accountID,
             }
         })
-            .then(dbModel => re.json(dbModel))
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     findAllByItem: (req, res) => {
@@ -18,7 +18,7 @@ const controller = {
                 inactive: false
             }
         })
-            .then(dbModel => re.json(dbModel))
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     findAllByPrice: (req, res) => {
@@ -28,7 +28,7 @@ const controller = {
                 inactive: false
             }
         })
-            .then(dbModel => re.json(dbModel))
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     findOne: (req, res) => {
@@ -38,42 +38,28 @@ const controller = {
                 inactive: false
             }
         })
-            .then(dbModel => re.json(dbModel))
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
     newPost: (req, res) => {
         db.Posts.create({
-<<<<<<< HEAD
-<<<<<<< Q
-            accountID: req.body.accountID,
+            accountId: req.body.accountId,
             accountName: req.body.accountName,
             item: req.body.item,
+            image: req.body.image,
             price: req.body.price,
             postID: req.body.postID
         })
-            .then(dbModel => re.json(dbModel))
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }, deletePost: (req, res) => {
-=======
-=======
->>>>>>> master
-                accountId: req.body.accountId,
-                accountName: req.body.accountName,
-                item: req.body.item,
-                price: req.body.price,
-                image: req.body.image
-        })
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    }, deletePost: (req, res ) => {
->>>>>>> working search and adding including api posts
         db.Posts.update({
             where: {
                 postID: req.params.postID
             },
             inactive: true
         })
-            .then(dbModel => re.json(dbModel))
+            .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     }
 
