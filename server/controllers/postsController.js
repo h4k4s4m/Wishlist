@@ -43,6 +43,7 @@ const controller = {
     },
     newPost: (req, res) => {
         db.Posts.create({
+<<<<<<< Q
             accountID: req.body.accountID,
             accountName: req.body.accountName,
             item: req.body.item,
@@ -52,6 +53,17 @@ const controller = {
             .then(dbModel => re.json(dbModel))
             .catch(err => res.status(422).json(err));
     }, deletePost: (req, res) => {
+=======
+                accountId: req.body.accountId,
+                accountName: req.body.accountName,
+                item: req.body.item,
+                price: req.body.price,
+                image: req.body.image
+        })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    }, deletePost: (req, res ) => {
+>>>>>>> working search and adding including api posts
         db.Posts.update({
             where: {
                 postID: req.params.postID
