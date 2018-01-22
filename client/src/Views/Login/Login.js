@@ -12,12 +12,15 @@ class Login extends Component {
   loginUser = () => {
     userApi.login(this.state.credential)
       .then(res => {
-
-        sessionStorage.setItem('userId', res.data.id);
-        sessionStorage.setItem('userName', res.data.username);
-        sessionStorage.setItem('fullName', `${res.data.firstName} ${res.data.lastName}`);
-
-        this.history.push('/profile');
+          console.log(res.data);
+          let joinDate = res.data.createdAt;
+          sessionStorage.setItem('userId', res.data.id);
+          sessionStorage.setItem('userName', res.data.username);
+          sessionStorage.setItem('fullName', `${res.data.firstName} ${res.data.lastName}`);
+          sessionStorage.setItem('email', res.data.email);
+          sessionStorage.setItem('dob', res.data.dob);
+          sessionStorage.setItem('joinDate', joinDate);
+          this.history.push('/profile');
       });
   };
 

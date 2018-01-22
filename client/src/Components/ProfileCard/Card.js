@@ -3,10 +3,10 @@ import { Card, Image } from 'semantic-ui-react';
 
 const MyCard = props => (
   <div>
-    <Image src='/assets/images/tom.jpg' size='large' circular />
-    <Card fluid>
+    <Card>
+      <Image src='/assets/images/tom.jpg' />
       <Card.Content>
-        <Card.Header>Name: {props.fullName}</Card.Header>
+        <Card.Header>{props.account.fullName}</Card.Header>
       </Card.Content>
     </Card>
   </div>

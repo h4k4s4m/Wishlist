@@ -32,8 +32,10 @@ const controller = {
         console.log(req.body);
         db.Account.create({
             username: req.body.username,
+            email: req.body.email,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
+            dob: req.body.dob,
             password: req.body.password
         })
         .then(dbModel => res.json(dbModel))

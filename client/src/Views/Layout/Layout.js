@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Divider, Button, Grid, Header, Image, List, Menu, Segment, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import MyButton from '../Logout';
 
 export default class Layout extends Component {
 
@@ -29,13 +30,13 @@ export default class Layout extends Component {
                             <Link to="/login">
                                 <Button active={activeItem === 'login'} onClick={this.handleItemClick}>Login
                             </Button>
+                                </Link>
+                                <Link to="/logout">
+                                    <MyButton active={activeItem === 'login'} onClick={this.handleItemClick} />
+                                </Link>
+                                <Link to="/signup">
+                                    <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
                             </Link>
-                            <Link to="/logout">
-                                <Button active={activeItem === 'login'} onClick={this.handleItemClick}>Logout
-                            </Button>
-                            </Link>
-                            <Link to="/signup">
-                                <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
                             </Button>
                             </Link>
                             <Link to="/profile">
