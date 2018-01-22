@@ -8,58 +8,58 @@ const controller = {
                 accountID: req.params.accountID,
             }
         })
-        .then(dbModel => re.json(dbModel))
-        .catch(err => res.status(422).json(err));
+            .then(dbModel => re.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
-    findAllByItem: (req, res) =>{
+    findAllByItem: (req, res) => {
         db.Posts.findAll({
             where: {
                 item: req.params.item,
                 inactive: false
             }
         })
-        .then(dbModel => re.json(dbModel))
-        .catch(err => res.status(422).json(err));
+            .then(dbModel => re.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
-    findAllByPrice: (req, res) =>{
+    findAllByPrice: (req, res) => {
         db.Posts.findAll({
             where: {
                 price: req.params.price,
                 inactive: false
             }
         })
-        .then(dbModel => re.json(dbModel))
-        .catch(err => res.status(422).json(err));
+            .then(dbModel => re.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
-    findOne : (req, res) => {
+    findOne: (req, res) => {
         db.Posts.findOne({
             where: {
                 postID: req.params.postID,
                 inactive: false
             }
         })
-        .then(dbModel => re.json(dbModel))
-        .catch(err => res.status(422).json(err));
+            .then(dbModel => re.json(dbModel))
+            .catch(err => res.status(422).json(err));
     },
     newPost: (req, res) => {
         db.Posts.create({
-                accountID: req.body.accountID,
-                accountName: req.body.accountName,
-                item: req.body.item,
-                price: req.body.price,
-                postID: req.body.postID
+            accountID: req.body.accountID,
+            accountName: req.body.accountName,
+            item: req.body.item,
+            price: req.body.price,
+            postID: req.body.postID
         })
-        .then(dbModel => re.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    }, deletePost: (req, res ) => {
+            .then(dbModel => re.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    }, deletePost: (req, res) => {
         db.Posts.update({
             where: {
                 postID: req.params.postID
             },
             inactive: true
         })
-        .then(dbModel => re.json(dbModel))
-        .catch(err => res.status(422).json(err));
+            .then(dbModel => re.json(dbModel))
+            .catch(err => res.status(422).json(err));
     }
 
 };
