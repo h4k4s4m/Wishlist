@@ -8,6 +8,9 @@ const MyCard = props => (
       <Card.Content>
         <Card.Header>{props.account.fullName}</Card.Header>
       </Card.Content>
+      <Card.Content extra>
+          Member Since: {props.account.joinDate}
+      </Card.Content>
     </Card>
   </div>
 )

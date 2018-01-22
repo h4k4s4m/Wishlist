@@ -3,6 +3,7 @@ import { Divider, Button, Grid, Header, Image, List, Menu, Segment, Icon } from 
 import { Link } from 'react-router-dom';
 import MyButton from '../Logout';
 
+
 export default class Layout extends Component {
 
     state = {}
@@ -11,7 +12,7 @@ export default class Layout extends Component {
 
     render() {
         const { activeItem } = this.state
-
+        let isLoggedin = sessionStorage.getItem('isLoggedin');
         return (
             <div>
                 <Menu fixed='top' inverted color='blue'>
@@ -28,19 +29,20 @@ export default class Layout extends Component {
                     <Menu.Menu position='right'>
                         <Menu.Item name='login'>
                             <Link to="/login">
-                                <Button active={activeItem === 'login'} onClick={this.handleItemClick}>Login
-                            </Button>
+                                {!isLoggedin && <Button active={activeItem === 'login'} onClick={this.handleItemClick}>Login
+                            </Button>}
                             </Link>
-                            <Link to="/logout">
-                                <MyButton active={activeItem === 'login'} onClick={this.handleItemClick} />
-                            </Link>
+                            <div>
+                                {isLoggedin && <MyButton />}
+                            </div>
                             <Link to="/signup">
-                                <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
-                            </Button>
+                                {!isLoggedin && <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
+                            </Button>}
                             </Link>
                             <Link to="/profile">
-                                <Button active={activeItem === 'profile'} onClick={this.handleItemClick}>Profile
-                            </Button>
+                                {isLoggedin && <Button active={activeItem === 'profile'} onClick={this.handleItemClick}>
+                                    Profile
+                            </Button>}
                             </Link>
                         </Menu.Item>
                     </Menu.Menu>

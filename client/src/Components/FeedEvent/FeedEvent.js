@@ -1,6 +1,14 @@
  import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Feed, Icon, Button } from 'semantic-ui-react';
+import { Feed, Button } from 'semantic-ui-react';
+
+const getPosts = () => {
+    postApi.getPosts(function(results){
+        console.log(results);
+    });
+}
+console.log('in the feed event');
+getPosts();
 
 const FeedEvent = (props) => (
     <Feed>
@@ -10,15 +18,10 @@ const FeedEvent = (props) => (
             </Feed.Label>
             <Feed.Content>
                 <Feed.Summary>
-                    <Feed.User>{props.who}</Feed.User>
-                    {" " + props.what}
-                    <Feed.Date>{props.when}</Feed.Date>
+                    <Feed.User>{props.accountID}</Feed.User>
                 </Feed.Summary>
                 <Feed.Meta>
-                    <Feed.Like>
-                        <Icon name='like' />
-                        4 Likes
-            </Feed.Like>
+                {props.text}
                 </Feed.Meta>
             </Feed.Content>
         </Feed.Event>

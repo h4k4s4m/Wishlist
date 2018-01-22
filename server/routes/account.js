@@ -24,23 +24,10 @@ router.post("/api/login", passport.authenticate("local"), (req, res) => {
         });
     }
 });
-// Route for getting some data about our user to be used client side
-// router.get("/api/user_data", function (req, res) {
-//     if (!req.user) {
-//       // The user is not logged in, send back an empty object
-//       res.json({"test": "test"});
-//     } else {
-//       // Otherwise send back the user's email and id
-//       // Sending back a password, even a hashed password, isn't a good idea
-//       res.json({
-//         username: req.user.username,
-//         id: req.user.id
-//       });
-//     }
-//   });
+
 router.get('/api/user', account.findAll);
 router.get('/api/user/:id', account.findById);
-router.post('/api/account', account.create);
+router.post('/api/account/', account.create);
 router.put('/api/account/:username', account.update);
 router.delete('/api/account/:id', account.remove);
 

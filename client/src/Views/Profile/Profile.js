@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import MyCard from '../../Components/ProfileCard';
-import { Container, Grid, Segment } from 'semantic-ui-react'
+import { Container, Grid, Segment } from 'semantic-ui-react';
 
 class Profile extends Component {
     state = {
         loading: true,
         account: {}
     };
+
+    componentWillMount = () => {
+        let login = sessionStorage.getItem('isLoggedin');
+        if (!login) {
+            this.props.history.push('/login');
+        }
+    }
 
     componentDidMount = () => {
         this.setState({
