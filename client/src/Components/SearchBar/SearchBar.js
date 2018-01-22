@@ -9,7 +9,9 @@ export default class SearchExampleStandard extends Component {
     source: apac.apac(""),
     item : "",
     price : "",
-    image : ""
+    image : "",
+    accountId: "",
+    accountName: ""
   }
 
   componentWillMount() {
@@ -18,18 +20,15 @@ export default class SearchExampleStandard extends Component {
   resetComponent = () => this.setState({ isLoading: false, results: [], value: '' })
 
   handleResultSelect = (e, { result }) => {
-    console.log(result);
+
     let selected = {
       item : result.title,
       price : result.price,
-      image : result.image
+      image : result.image,
+      accountId: sessionStorage.getItem("userId") || 1,
+      accountName : sessionStorage.getItem("userName") || "Sahm"
     };
-
     this.setState(selected);
-
-
-
-    this.setState({ value: result.title })
   }
   setSearch = () => {
     this.setState({ source: apac.apac(this.state.value) })
