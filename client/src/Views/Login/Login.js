@@ -20,7 +20,6 @@ class Login extends Component {
           sessionStorage.setItem('email', res.data.email);
           sessionStorage.setItem('dob', res.data.dob);
           sessionStorage.setItem('joinDate', joinDate);
-    
           this.history.push('/profile');
       });
   };
@@ -56,7 +55,7 @@ class Login extends Component {
   render() {
     return (
       <div className='login-form'>
-        <Container text style={{ marginTop: '7em' }}>
+        <Container text style={{ margin: '10em' }}>
           {/*
         Heads up! The styles below are necessary for the correct render of this example.
         You can do same with CSS, the main idea is that all the elements up to the `Grid`
@@ -72,10 +71,10 @@ class Login extends Component {
             textAlign='center'
             verticalAlign='middle'
           >
-            <Grid.Column style={{ maxWidth: 450 }}>
+            <Grid.Column mobile={16} tablet={8} computer={12}>
               <Header as='h2' color='blue' textAlign='center'>
                 {' '}Login to Your Account
-         </Header>
+            </Header>
               <Form size='massive'>
                 <Segment stacked>
                   <Form.Input
