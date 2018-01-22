@@ -43,13 +43,11 @@ const controller = {
     },
     newPost: (req, res) => {
         db.Posts.create({
-            where: {
                 accountID: req.body.accountID,
                 accountName: req.body.accountName,
                 item: req.body.item,
                 price: req.body.price,
                 postID: req.body.postID
-            }
         })
         .then(dbModel => re.json(dbModel))
         .catch(err => res.status(422).json(err));
