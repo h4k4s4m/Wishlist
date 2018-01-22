@@ -7,9 +7,16 @@ import Comment from "../Comments"
 
 const MyFeed = () => (
     <Container>
-        <Grid columns={2} divided>
+        <Grid>
             <Grid.Row>
-                <Grid.Column mobile={16} tablet={16} computer={10}>
+                <Grid.Column mobile={16} tablet={16} computer={16}>
+                    <Segment color='blue'>
+                        <SearchBar />
+                    </Segment>
+                </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+                <Grid.Column mobile={16} tablet={16} computer={16}>
                     <Segment color='blue'>
                         <FeedEvent who={"Sahm"} what={"added a gift"} when={"Like 15 minutes ago"} />
                         <FeedEvent who={"Ren"} what={"liked a gift"} when={"Like 20 minutes ago"} />
@@ -17,11 +24,7 @@ const MyFeed = () => (
                         <Comment />
                     </Segment>
                 </Grid.Column>
-                <Grid.Column mobile={16} tablet={16} computer={6}>
-                    <Segment color='blue'>
-                        <SearchBar />
-                    </Segment>
-                </Grid.Column>
+
             </Grid.Row>
         </Grid>
     </Container>
