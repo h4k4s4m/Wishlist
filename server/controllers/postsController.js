@@ -41,6 +41,15 @@ const controller = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+    findAll: (req, res) => {
+        db.Posts.findAll({
+            where: {
+                inactive: false
+            }
+        })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+    },
     newPost: (req, res) => {
         db.Posts.create({
             accountId: req.body.accountId,

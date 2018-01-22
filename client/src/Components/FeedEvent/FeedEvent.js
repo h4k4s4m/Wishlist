@@ -2,6 +2,14 @@
 import 'semantic-ui-css/semantic.min.css';
 import { Feed, Button } from 'semantic-ui-react';
 
+const getPosts = () => {
+    postApi.getPosts(function(results){
+        console.log(results);
+    });
+}
+console.log('in the feed event');
+getPosts();
+
 const FeedEvent = (props) => (
     <Feed>
         <Feed.Event>
