@@ -1,11 +1,10 @@
 import React from 'react';
 import Feed from '../../Components/Feed';
-import { Container } from 'semantic-ui-react';
 
 const Home = () => (
-    <Container text style={{ marginTop: '7em' }}>
+    <div text style={{ marginTop: '10em' }}>
         <Feed />
-    </Container>
+    </div>
 )
 
 export default Home; 

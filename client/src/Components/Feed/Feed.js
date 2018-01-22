@@ -1,11 +1,12 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Grid, Segment } from 'semantic-ui-react';
+import { Grid, Segment, Container } from 'semantic-ui-react';
 import FeedEvent from "../FeedEvent";
 import SearchBar from "../SearchBar";
 import Comment from "../Comments"
 
 const MyFeed = () => (
+
     <Grid columns={2} divided>
         <Grid.Row>
             <Grid.Column mobile={16} tablet={16} computer={16}>
@@ -25,6 +26,7 @@ const MyFeed = () => (
             </Grid.Column>
         </Grid.Row>
     </Grid>
+
 )
 
 export default MyFeed;

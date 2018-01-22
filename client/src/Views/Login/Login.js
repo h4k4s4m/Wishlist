@@ -11,7 +11,12 @@ class Login extends Component {
   history = this.props.history;
   loginUser = () => {
     userApi.login(this.state.credential)
-      .then(loggedin => {
+      .then(res => {
+
+        sessionStorage.setItem('userId', res.data.id);
+        sessionStorage.setItem('userName', res.data.username);
+        sessionStorage.setItem('fullName', `${res.data.firstName} ${res.data.lastName}`);
+
         this.history.push('/profile');
       });
   };
@@ -47,7 +52,7 @@ class Login extends Component {
   render() {
     return (
       <div className='login-form'>
-        <Container text style={{ marginTop: '7em' }}>
+        <Container text style={{ margin: '10em' }}>
           {/*
         Heads up! The styles below are necessary for the correct render of this example.
         You can do same with CSS, the main idea is that all the elements up to the `Grid`
@@ -63,10 +68,10 @@ class Login extends Component {
             textAlign='center'
             verticalAlign='middle'
           >
-            <Grid.Column style={{ maxWidth: 450 }}>
+            <Grid.Column mobile={16} tablet={8} computer={12}>
               <Header as='h2' color='blue' textAlign='center'>
                 {' '}Login to Your Account
-         </Header>
+            </Header>
               <Form size='massive'>
                 <Segment stacked>
                   <Form.Input

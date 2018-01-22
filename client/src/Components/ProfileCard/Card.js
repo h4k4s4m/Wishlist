@@ -1,21 +1,15 @@
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 
-const MyCard = () => (
-  <Card>
-    <Image src='/assets/images/tom.jpg' />
-    <Card.Content>
-      <Card.Header>Tom</Card.Header>
-      <Card.Meta>Joined in 2016</Card.Meta>
-      <Card.Description>Tom is a comedian living in Nashville.</Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        10 Friends
-      </a>
-    </Card.Content>
-  </Card>
+const MyCard = props => (
+  <div>
+    <Image src='/assets/images/tom.jpg' size='large' circular />
+    <Card fluid>
+      <Card.Content>
+        <Card.Header>Name: {props.fullName}</Card.Header>
+      </Card.Content>
+    </Card>
+  </div>
 )
 
 export default MyCard;
