@@ -43,34 +43,5 @@ module.exports = function (sequelize, DataTypes) {
     return bcrypt.compareSync(password, this.password);
   };
   
-  // Hooks are automatic methods that run during various phases of the Account Model lifecycle
-  // In this case, before an Account is created, we will automatically hash their password
-  
-//   Account.beforeCreate(function(account, options) {
-//     return cryptPassword(account.password)
-//       .then(success => {
-//         account.password = success;
-//       })
-//       .catch(err => {
-//         if (err) console.log(err);
-//       });
-//   });
-
-// function cryptPassword(password) {
-//   console.log("cryptPassword" + password);
-//   return new Promise(function(resolve, reject) {
-//     bcrypt.genSalt(10, function(err, salt) {
-//       // Encrypt password using bycrpt module
-//       if (err) return reject(err);
-
-//       bcrypt.hash(password, salt, null, function(err, hash) {
-//         if (err) return reject(err);
-//         return resolve(hash);
-//       });
-//     });
-//   });
-// };
- 
-
   return Account;
 };
