@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
 
-export default class Logout extends Component {
-    history = this.props.history;
-    logout = () => {
+class Logout extends Component {
+  
+    logout = event => {
         sessionStorage.clear();
-        window.location.replace('/login');
+        this.props.history.push('/login');
     }
-
 
     render() {
         return (
@@ -16,3 +16,4 @@ export default class Logout extends Component {
     }
 }
 
+export default withRouter(Logout);
