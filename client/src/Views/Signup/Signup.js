@@ -84,7 +84,7 @@ class Signup extends Component {
                     fluid
                     icon='mail'
                     iconPosition='left'
-                    placeholder='email'
+                    placeholder='Email'
                   />
                   <Form.Input
                     onChange={this.handleInputChange}
@@ -111,7 +111,7 @@ class Signup extends Component {
                     fluid
                     icon='calendar'
                     iconPosition='left'
-                    placeholder='Date of birth'
+                    placeholder='Date of Birth 0000-00-00'
                   />
                   <Form.Input
                     onChange={this.handleInputChange}
@@ -133,7 +133,7 @@ class Signup extends Component {
                 </Segment>
               </Form>
               <Message>
-                Already a member? <a href='/login'>Login</a>
+                Already a Member? <a href='/login'>Login</a>
               </Message>
             </Grid.Column>
           </Grid>

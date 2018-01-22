@@ -7,9 +7,9 @@ import Modal from "./Modal";
 export default class SearchExampleStandard extends Component {
   state = {
     source: apac.apac(""),
-    item : "",
-    price : "",
-    image : "",
+    item: "",
+    price: "",
+    image: "",
     accountId: "",
     accountName: ""
   }
@@ -22,11 +22,11 @@ export default class SearchExampleStandard extends Component {
   handleResultSelect = (e, { result }) => {
 
     let selected = {
-      item : result.title,
-      price : result.price,
-      image : result.image,
-      accountId: sessionStorage.getItem("userId") || 1,
-      accountName : sessionStorage.getItem("userName") || "Sahm"
+      item: result.title,
+      price: result.price,
+      image: result.image,
+      accountId: sessionStorage.getItem("userId"),
+      accountName: sessionStorage.getItem("userName")
     };
     this.setState(selected);
   }
@@ -41,8 +41,8 @@ export default class SearchExampleStandard extends Component {
     this.debounced();
     setTimeout(() => {
       if (this.state.value.length < 1) return this.resetComponent()
-      const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
-      const isMatch = result => re.test(result.title)
+      const res = new RegExp(_.escapeRegExp(this.state.value), 'i')
+      const isMatch = result => res.test(result.title)
 
       this.setState({
         isLoading: false,
@@ -69,7 +69,7 @@ export default class SearchExampleStandard extends Component {
           value={value}
           style={{ overflow: true }}
         />
-        <Modal {...this.state}/>
+        <Modal {...this.state} />
       </div>
     )
   }
