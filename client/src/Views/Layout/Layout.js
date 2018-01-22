@@ -30,13 +30,12 @@ export default class Layout extends Component {
                             <Link to="/login">
                                 <Button active={activeItem === 'login'} onClick={this.handleItemClick}>Login
                             </Button>
-                                </Link>
-                                <Link to="/logout">
-                                    <MyButton active={activeItem === 'login'} onClick={this.handleItemClick} />
-                                </Link>
-                                <Link to="/signup">
-                                    <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
                             </Link>
+                            <Link to="/logout">
+                                <MyButton active={activeItem === 'login'} onClick={this.handleItemClick} />
+                            </Link>
+                            <Link to="/signup">
+                                <Button active={activeItem === 'signup'} onClick={this.handleItemClick}>Signup
                             </Button>
                             </Link>
                             <Link to="/profile">
