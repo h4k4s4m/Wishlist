@@ -29,20 +29,24 @@ export default path => {
   app.use('/api/posts', routers.posts);
   app.use('/api/comments', routers.comments);
 
+
+  // Route for logging user out
+  app.get("/logout", function (req, res) {
+    req.logout();
+    console.log("test logout");
+    res.redirect("/");
+  });
+
+  console.log(`${isAuthenticated}: this is testing the auth`);
+  app.get("/profile", isAuthenticated, function (req, res) {
+    res.sendFile(`${path}/client/index.html`);
+  });
   // Any non API GET routes will be directed to our React App and handled by React Router
   app.get("*", (req, res) => {
     res.sendFile(`${path}/client/index.html`);
   });
 
-  // Route for logging user out
-  app.get("/logout", function (req, res) {
-    req.logout();
-    res.redirect("/");
-  });
-
-  app.get("/profile", isAuthenticated, function (req, res) {
-    res.sendFile(`${path}/`);
-  });
+  
 
 
   return app;

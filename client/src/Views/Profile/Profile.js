@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MyCard from '../../Components/ProfileCard';
 import { Container, Grid, Segment } from 'semantic-ui-react'
+import { Redirect } from 'react-router';
 
 class Profile extends Component {
     state = {
@@ -8,6 +9,13 @@ class Profile extends Component {
         account: {}
     };
 
+    componentWillMount = () => {
+        let login = sessionStorage.getItem('isLoggedin');
+        if(!login){
+            this.props.history.push('/login');
+        }
+    }
+    
     componentDidMount = () => {
         this.setState({
             account: {
