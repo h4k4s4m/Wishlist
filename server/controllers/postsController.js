@@ -43,16 +43,13 @@ const controller = {
     },
     newPost: (req, res) => {
         db.Posts.create({
-            where: {
-                accountID: req.body.accountID,
+                accountId: req.body.accountId,
                 accountName: req.body.accountName,
                 item: req.body.item,
                 price: req.body.price,
-                image: req.body.image,
-                postID: req.body.postID
-            }
+                image: req.body.image
         })
-        .then(dbModel => re.json(dbModel))
+        .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }, deletePost: (req, res ) => {
         db.Posts.update({
