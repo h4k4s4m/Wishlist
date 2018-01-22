@@ -3,18 +3,37 @@ import 'semantic-ui-css/semantic.min.css';
 import { Grid, Segment, Container } from 'semantic-ui-react';
 import FeedEvent from "../FeedEvent";
 import SearchBar from "../SearchBar";
-import Comment from "../Comments"
+import commentApi from "../../Data/comment-api";
 
-const MyFeed = () => (
-    <Container>
+
+
+export default class Feed extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            result: []
+        }
+    }
+
+componentDidMount = ()=>{
+    commentApi.getAll().then((result)=>{
+        this.setState({result})
+    })
+
+
+}
+
+
+printArray = (array) => array.map((item) => <FeedEvent accountID={item.accountId} text={item.text}/> );
+
+render(){
+    return(
+        <Container>
         <Grid columns={2} divided>
             <Grid.Row>
                 <Grid.Column mobile={16} tablet={16} computer={10}>
                     <Segment color='blue'>
-                        <FeedEvent who={"Sahm"} what={"added a gift"} when={"Like 15 minutes ago"} />
-                        <FeedEvent who={"Ren"} what={"liked a gift"} when={"Like 20 minutes ago"} />
-                        <FeedEvent who={"Q"} what={"stole a gift"} when={"Like 15 minutes ago"} />
-                        <Comment />
+                    {this.printArray(this.state.result)}
                     </Segment>
                 </Grid.Column>
                 <Grid.Column mobile={16} tablet={16} computer={6}>
@@ -25,6 +44,8 @@ const MyFeed = () => (
             </Grid.Row>
         </Grid>
     </Container>
-)
+    )
+}
+}
 
-export default MyFeed;
+

@@ -12,7 +12,7 @@ console.log(posts);
 const app = App(__dirname);
 
 //use sync({force:true}) to drop all tables before trying to create
-db.sequelize.sync({ force: true }).then(function () { // set {force: true} inside sync() to destroy the db everytime the server runs
+db.sequelize.sync({ force: false }).then(function () { // set {force: true} inside sync() to destroy the db everytime the server runs
 
   app.listen(PORT, function () {
 
