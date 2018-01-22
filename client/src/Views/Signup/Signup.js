@@ -79,6 +79,15 @@ class Signup extends Component {
                   />
                   <Form.Input
                     onChange={this.handleInputChange}
+                    value={this.state.user.email}
+                    name='email'
+                    fluid
+                    icon='mail'
+                    iconPosition='left'
+                    placeholder='Email'
+                  />
+                  <Form.Input
+                    onChange={this.handleInputChange}
                     value={this.state.user.firstName}
                     name='firstName'
                     fluid
@@ -94,6 +103,15 @@ class Signup extends Component {
                     icon='user'
                     iconPosition='left'
                     placeholder='Last Name'
+                  />
+                  <Form.Input
+                    onChange={this.handleInputChange}
+                    value={this.state.user.dob}
+                    name='dob'
+                    fluid
+                    icon='calendar'
+                    iconPosition='left'
+                    placeholder='Date of Birth 0000-00-00'
                   />
                   <Form.Input
                     onChange={this.handleInputChange}
@@ -115,7 +133,7 @@ class Signup extends Component {
                 </Segment>
               </Form>
               <Message>
-                Already a member? <a href='/login'>Login</a>
+                Already a Member? <a href='/login'>Login</a>
               </Message>
             </Grid.Column>
           </Grid>

@@ -8,20 +8,21 @@ router.post("/api/login", passport.authenticate("local"), (req, res) => {
     // So we're sending the user back the route to the profile page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
     //console.log(req.user);
-    if(!req.user){
-        res.json({"test": "bad input"});
+    if (!req.user) {
+        res.json({ "test": "bad input" });
     } else {
-
-    console.log(req.user.firstName);
-    res.json({
-        url: "/profile",
-        loggedin: true,
-        username: req.user.username,
-        firstName: req.user.firstName,
-        lastName: req.user.lastName,
-        id: req.user.id
-    });
-}
+        res.json({
+            url: "/profile",
+            loggedin: true,
+            username: req.user.username,
+            firstName: req.user.firstName,
+            lastName: req.user.lastName,
+            id: req.user.id,
+            email: req.user.email,
+            dob: req.user.dob,
+            joinDate: req.user.createdAt
+        });
+    }
 });
 // Route for getting some data about our user to be used client side
 // router.get("/api/user_data", function (req, res) {
