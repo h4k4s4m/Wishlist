@@ -8,9 +8,6 @@ const MyCard = props => (
       <Card.Content>
         <Card.Header>Name: {props.fullName}</Card.Header>
       </Card.Content>
-      <Card.Content extra>
-        <Card.Meta>Member Since: </Card.Meta>
-      </Card.Content>
     </Card>
   </div>
 )
