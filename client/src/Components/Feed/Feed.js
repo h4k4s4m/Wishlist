@@ -17,12 +17,17 @@ export default class Feed extends React.Component{
     }
 
 componentDidMount = ()=>{
+
+    setInterval(()=>{
+
     commentApi.getAll().then((result)=>{
         this.setState({comments: result})
     })
     postApi.getPosts().then((result) => {
         this.setState({posts: result})
     })
+
+    }, 1000)
 }
 
 
