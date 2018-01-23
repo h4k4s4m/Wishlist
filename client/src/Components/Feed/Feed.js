@@ -1,7 +1,7 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Grid, Segment, Container } from 'semantic-ui-react';
-import FeedEvent from "../FeedEvent";
+import { Grid, Segment, Container, Comment, Header } from 'semantic-ui-react';
+import Comments from "../Comments";
 import SearchBar from "../SearchBar";
 import commentApi from "../../Data/comment-api";
 
@@ -20,7 +20,7 @@ componentDidMount = ()=>{
 }
 
 
-printArray = (array) => array.map((item) => <FeedEvent accountID={item.accountId} text={item.text}/> );
+printArray = (array) => array.map((item) => <Comments accountID={item.accountID} text={item.text}/> );
 
 render(){
     return(
@@ -36,7 +36,10 @@ render(){
             <Grid.Row>
                 <Grid.Column mobile={16} tablet={16} computer={16}>
                     <Segment color='blue'>
+                    <Comment.Group>
+                    <Header as='h3' dividing>Comments</Header>
                     {this.printArray(this.state.result)}
+                    </Comment.Group>
                     </Segment>
                 </Grid.Column>
 
