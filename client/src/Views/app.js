@@ -10,32 +10,7 @@ import SearchBar from "../Components/SearchBar";
 
 let isLoggedin = sessionStorage.getItem('isLoggedin');
 console.log(isLoggedin);
-//Example object - REMOVE ME FOR PRODUCTION
-const props = {
-  item: {
-    name: "Trumpet",
-    url: "https://images-na.ssl-images-amazon.com/images/I/5114BVcTzpL.jpg",
-    cost: 149.99
-  },
-  user: {
-    username: "Sahm"
-  },
-  event: {
-    for: "Sarah",
-    what: "birthday"
-  }
-};
 
-const somethingHappened = {
-  who: "Sahm",
-  what: "Added new gift",
-  body: "something goes here"
-};
-
-
-const ProductWrapper = () => (
-  <Card {...props} />
-);
 
 
 
@@ -48,7 +23,6 @@ export default props => (
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/card" component={ProductWrapper} />
       <Route exact path="/search" component={SearchBar} />
       <Route path="/" component={Home} />
     </Switch>
