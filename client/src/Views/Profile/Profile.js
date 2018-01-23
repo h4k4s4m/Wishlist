@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyCard from '../../Components/ProfileCard';
+import Item from '../../Components/Items';
 import { Container, Grid, Segment } from 'semantic-ui-react';
 
 class Profile extends Component {
@@ -46,10 +47,7 @@ class Profile extends Component {
                             </Segment>
                         </Grid.Column>
                         <Grid.Column mobile={16} tablet={8} computer={6}>
-                            <Segment textAlign='center' color='blue'>
-                                <h1>Wishlist Items</h1>
-                                <hr />
-                            </Segment>
+                            <Item />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>

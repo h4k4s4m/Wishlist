@@ -1,10 +1,6 @@
 import axios from "axios";
 const postApi = {
-  login: credential => axios.post('/api/login', credential),
-  getUser: () => axios.get('/api/user_data', data => {
-    console.log(typeof(data.username));
-    return data;
-  }),
+  findAllByAccount: accountID => axios.get(`/api/posts/${accountID}`),
   create: post => axios.post('/api/posts', post).then(results => results.data)
 };
 export {
