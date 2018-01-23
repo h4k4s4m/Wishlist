@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MyCard from '../../Components/ProfileCard';
 import Item from '../../Components/Items';
 import { Container, Grid, Segment } from 'semantic-ui-react';
+import format from 'date-fns/format';
 
 class Profile extends Component {
     state = {
@@ -17,13 +18,15 @@ class Profile extends Component {
     }
 
     componentDidMount = () => {
+        let dob_format= format(sessionStorage.getItem('dob'),'MM-DD-YYYY');
+        let joinDate_format= format(sessionStorage.getItem('joinDate'),'MM-DD-YYYY');
         this.setState({
             account: {
                 username: sessionStorage.getItem('userName'),
                 fullName: sessionStorage.getItem('fullName'),
-                dob: sessionStorage.getItem('dob'),
+                dob: dob_format,
                 email: sessionStorage.getItem('email'),
-                joinDate: sessionStorage.getItem('joinDate')
+                joinDate: joinDate_format
             }
         })
     }
