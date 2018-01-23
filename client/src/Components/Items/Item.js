@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Icon, List, Segment} from 'semantic-ui-react';
+import { List, Segment} from 'semantic-ui-react';
 import postApi from '../../Data/post-api';
 
 export default class Item extends Component {
@@ -12,12 +12,12 @@ export default class Item extends Component {
         postApi.findAllByAccount(accountId)
             .then( res => {
                 let results = res.data.map( element => {
-                    return element; 
+                    return element;
                 })
               this.setState({post: results});
-            });    
+            });
     }
-    
+
     render() {
         return (
             <Segment textAlign='center' color='blue'>
@@ -26,17 +26,17 @@ export default class Item extends Component {
                                 <Segment textAlign='left'>
                                 <h5>{this.state.post.map((e) => {
                                     return (
-                                    <List key={e.postID}>                                    
-                                        <List.Item > 
-                                        <List.Icon name='gift' />   
-                                            {e.item} -- {e.price} 
+                                    <List key={e.postID}>
+                                        <List.Item >
+                                        <List.Icon name='gift' />
+                                            {e.item} -- {e.price}
                                         </List.Item>
                                     </List>)
                                 })}</h5>
                                 </Segment>
                         </Segment>
-                       
-                       
+
+
         )
     }
 }

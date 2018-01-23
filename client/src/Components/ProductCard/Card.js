@@ -5,16 +5,16 @@ import { Card, Icon, Image } from 'semantic-ui-react';
 
 const ProductCard = (props) => (
     <Card color={"blue"} >
-        <Image src={props.item.url} />
+        <Image src={props.image} />
         <Card.Content>
             <Card.Header>
-                {props.item.name}
+                {props.item}
             </Card.Header>
             <Card.Meta>
-                Cost: $149.99
+                {props.price}
             </Card.Meta>
             <Card.Description>
-                For {props.event.for}'s {props.event.what}
+                What a wonderful gift!
             </Card.Description>
         </Card.Content>
         <Card.Content extra>
@@ -27,7 +27,7 @@ const ProductCard = (props) => (
         </Card.Content>   <Card.Content extra>
             <a>
                 <Icon name='user' />
-                Suggested by {props.user.username}
+                Suggested by {props.accountName}
             </a>
         </Card.Content>
     </Card>
