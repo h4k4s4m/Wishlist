@@ -7,7 +7,6 @@ import Signup from './Signup';
 import Profile from './Profile';
 import Layout from './Layout';
 import Card from '../Components/ProductCard';
-import FeedEvent from "../Components/FeedEvent";
 import SearchBar from "../Components/SearchBar";
 
 let isLoggedin = sessionStorage.getItem('isLoggedin');
@@ -38,13 +37,11 @@ const somethingHappened = {
 const ProductWrapper = () => (
   <Card {...props} />
 );
-const FeedWrapper = () => (
-  <FeedEvent {...somethingHappened} />
-);
+
 
 
 export default props => (
-  
+
   <Router>
   <div className="app">
     <Switch>
@@ -53,9 +50,8 @@ export default props => (
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/card" component={ProductWrapper} />
-      <Route exact path="/feed" component={FeedWrapper} />
       <Route exact path="/search" component={SearchBar} />
-      <Route path="/" component={Home} />   
+      <Route path="/" component={Home} />
     </Switch>
     <Layout />
   </div>
