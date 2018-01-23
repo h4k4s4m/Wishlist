@@ -8,6 +8,7 @@ router.get("/:accountID", posts.findAllByAccount );
 router.get('/:item', posts.findAllByItem);
 router.get('/:price', posts.findAllByPrice);
 router.get('/:postID', posts.findOne);
+router.get('/', posts.findAll);
 router.post('/', posts.newPost);
 router.delete('/:id', posts.deletePost);
 

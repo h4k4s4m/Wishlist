@@ -27,7 +27,7 @@ router.post("/api/login", passport.authenticate("local"), (req, res) => {
 
 router.get('/api/user', account.findAll);
 router.get('/api/user/:id', account.findById);
-router.post('/api/account', account.create);
+router.post('/api/account/', account.create);
 router.put('/api/account/:username', account.update);
 router.delete('/api/account/:id', account.remove);
 
