@@ -29,7 +29,7 @@ const controller = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res){
-        console.log(req.body);
+        console.log("CONSOLE LOG " + req);
         db.Account.create({
             username: req.body.username,
             email: req.body.email,
