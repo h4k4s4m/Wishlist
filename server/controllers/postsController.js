@@ -11,7 +11,16 @@ const controller = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
     },
+<<<<<<< HEAD
     findAllByItem: (req, res) => {
+=======
+    findAll: (req, res) => {
+        db.Posts.findAll({})
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
+    },
+    findAllByItem: (req, res) =>{
+>>>>>>> Q
         db.Posts.findAll({
             where: {
                 item: req.params.item,
