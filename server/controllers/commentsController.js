@@ -27,13 +27,12 @@ const controller = {
     },
     createComment: (req, res) => {
         db.comments.create({
-            postID: req.body.postID,
             text: req.body.text,
             accountID: req.body.accountID
         })
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.json(422).json(err));
-    } ,
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
     deleteComment: (req, res) => {
         db.comments.update({
             where: {

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Comment } from 'semantic-ui-react'
 import userApi from '../../Data/user-api';
+import CommentBox from '../CommentBox'
 
 export default class WishComment extends React.Component{
 state = {
@@ -27,6 +28,7 @@ conditionalRender = (props) => {
   }
 }
 
+
 userLookup = (id) =>{
   return userApi.getById(id).then((name)=>{
     this.setState({name: name.firstName})
@@ -39,6 +41,7 @@ componentDidMount(){
 
 render(){
   return(
+    <div>
     <Comment>
       <Comment.Avatar src='https://react.semantic-ui.com/assets/images/avatar/small/matt.jpg' />
       <Comment.Content>
@@ -47,12 +50,10 @@ render(){
           <div></div>
         </Comment.Metadata>
         <Comment.Text>{this.props.text}!</Comment.Text>
-        <Comment.Actions>
           <Comment.Action onClick={this.handleClick}>Reply</Comment.Action>
-        </Comment.Actions>
       </Comment.Content>
-      {this.conditionalRender}
     </Comment>
-
+    <CommentBox />
+    </div>
   )}
 }
