@@ -1,26 +1,39 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Grid, Segment, Container, Comment, Header } from 'semantic-ui-react';
+import { Grid, Segment, Container, Comment, Header, Card } from 'semantic-ui-react';
 import Comments from "../Comments";
 import SearchBar from "../SearchBar";
+import ProductCard from "../ProductCard";
 import commentApi from "../../Data/comment-api";
+import postApi from "../../Data/post-api"
 
 export default class Feed extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            result: []
+            comments: [],
+            posts: []
         }
     }
 
 componentDidMount = ()=>{
+
+    setInterval(()=>{
+
     commentApi.getAll().then((result)=>{
-        this.setState({result})
+        this.setState({comments: result})
     })
+    postApi.getPosts().then((result) => {
+        this.setState({posts: result})
+    })
+
+    }, 1000)
 }
 
 
-printArray = (array) => array.map((item) => <Comments accountID={item.accountID} text={item.text}/> );
+printComments = (array) => array.map((item) => <Comments accountID={item.accountID} text={item.text}/> );
+
+printPosts = (array) => array.map((item) => <ProductCard {...item}/> );
 
 render(){
     return(
@@ -36,9 +49,12 @@ render(){
             <Grid.Row>
                 <Grid.Column mobile={16} tablet={16} computer={16}>
                     <Segment color='blue'>
+                    <Grid.Row >
+                    <Card.Group >{this.printPosts(this.state.posts)}</Card.Group>
+                    </Grid.Row>
                     <Comment.Group>
                     <Header as='h3' dividing>Comments</Header>
-                    {this.printArray(this.state.result)}
+                    {this.printComments(this.state.comments)}
                     </Comment.Group>
                     </Segment>
                 </Grid.Column>

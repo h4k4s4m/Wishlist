@@ -1,11 +1,31 @@
 import React from 'react'
-import { Button, Comment, Form, Header } from 'semantic-ui-react'
+import { Comment } from 'semantic-ui-react'
 import userApi from '../../Data/user-api';
 import CommentBox from '../CommentBox'
 
 export default class WishComment extends React.Component{
 state = {
-  name: ""
+  name: "",
+  isClicked: false
+}
+
+handleClick =  () => {
+  let temp = !this.state.isClicked;
+  console.log(temp);
+  this.setState({
+    isClicked: temp
+  })
+}
+
+conditionalRender = (props) => {
+  if(props){
+    return(
+      <Form reply>
+      <Form.TextArea />
+      <Button content='Add Reply' labelPosition='left' icon='edit' primary />
+    </Form> 
+    )
+  }
 }
 
 
@@ -30,8 +50,7 @@ render(){
           <div></div>
         </Comment.Metadata>
         <Comment.Text>{this.props.text}!</Comment.Text>
-        <Comment.Actions>
-        </Comment.Actions>
+          <Comment.Action onClick={this.handleClick}>Reply</Comment.Action>
       </Comment.Content>
     </Comment>
     <CommentBox />
